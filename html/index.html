@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Wyszukiwarka książek</h1>
+    <form action="rezultaty.php" method="get">
+        <select name="metoda_szukania">
+            <option value="autor">Autor</option>
+            <option value="tytul">Tytuł</option>
+            <option value="isbn">ISBN</option>
+        </select><br>
+        Wprowadź poszukiwane wyrażenie: <br>
+        <input type="text" name="wyrazenie" size="40"><br>
+        <input type="submit" value="Szukaj">
+    </form>
+</body>
+</html>
