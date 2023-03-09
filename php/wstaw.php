@@ -15,7 +15,7 @@
     <h2>Dzień Pi - rezultaty</h2>
     <?php
         $FirstName = $_POST['FirstName'];
-        $LastName = $_POST['LastName']
+        $LastName = $_POST['LastName'];
         $Class = $_POST['Class'];
 
         $FirstName = trim($FirstName);
