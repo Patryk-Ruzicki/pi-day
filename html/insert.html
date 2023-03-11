@@ -13,7 +13,7 @@
             background-color: #cccccc;
             width: 80px;
         }
-        .submit{
+        #submit{
             float: right;
             width: 120px;
             height: 20px;
@@ -30,7 +30,7 @@
 </head>
 <body>
     <h1>Dzień Pi - wstawienie</h1>
-    <form action="../php/wstaw.php" method="post">
+    <form action="../php/insert.php" method="post">
         <table>
             <tr>
                 <th>Imie</th>
@@ -45,7 +45,7 @@
                 <td><input type="text" name="Class" maxlength="2" size="20" required></td>
             </tr>
             <tr>
-                <td colspan="2"><b><input type="submit" value="Zapisz" class="submit"></b></td>
+                <td colspan="2"><b><input type="submit" value="Zapisz" id="submit"></b></td>
             </tr>
         </table>
     </form>

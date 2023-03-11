@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dzień Pi - wyszukiwarka</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+        th{
+            background-color: #cccccc;
+            width: 200px;
+        }
+        #submit{
+            float: right;
+            width: 120px;
+            height: 20px;
+
+            color: black;
+            background-color: #24A413;
+            border: 2px solid black;
+
+            -webkit-box-shadow: inset 0px 10px 0px 0px #2CC918;
+            -moz-box-shadow: inset 0px 10px 0px 0px #2CC918;
+            box-shadow: inset 0px 10px 0px 0px #2CC918;
+        }
+        textarea {
+            resize: none;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dzień Pi - wyszukiwarka </h1>
+    <form action="../php/results.php" method="get">
+        <table>
+            <tr>
+                <th>Metoda szukania</th>
+                <td>
+                    <select name="search_method">
+                        <option value="FirstName">Imie ucznia</option>
+                        <option value="LastName">Nazwisko ucznia</option>
+                        <option value="Class">Klasa</option>
+                        <option value="QuestName">Nazwa zadanie</option>
+                        <option value="Description">Opis zadania</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Wprowadź poszukiwane wyrażenie:</th>
+                <td><textarea name="phraze" id="phraze" cols="30" rows="10" required></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2"><b><input type="submit" value="Szukaj" id="submit"></b></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
