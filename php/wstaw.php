@@ -14,8 +14,9 @@
 <body>
     <h2>Dzień Pi - rezultaty</h2>
     <?php
+        $StudentID = 0;
         $FirstName = $_POST['FirstName'];
-        $LastName = $_POST['LastName']
+        $LastName = $_POST['LastName'];
         $Class = $_POST['Class'];
 
         $FirstName = trim($FirstName);
@@ -33,11 +34,11 @@
         }
 
         $StudentID++;
-        $zapytanie = "insert into ksiazki value ('".$StudentID."', '".$FirstName."','".$LastName."','".$Class."')<br>";
-        echo $zapytanie;
+        $sqlCode = "INSERT INTO students VALUES ('".$StudentID."', '".$FirstName."', '".$LastName."', '".$Class."')<br>";
+        echo $sqlCode;
 
-        $wynik = $db -> query($zapytanie);
-        if($wynik){
+        $result = $db -> query($sqlCode);
+        if($result){
             echo $db -> affected_rows." student zapisany do bazy.";
         }else{
             echo "Błąd. Uczeń nie został zapisany do bazy.";
