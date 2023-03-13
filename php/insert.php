@@ -14,7 +14,6 @@
 <body>
     <h2>Dzień Pi - rezultaty</h2>
     <?php
-        $StudentID = 0;
         $FirstName = $_POST['FirstName'];
         $LastName = $_POST['LastName'];
         $Class = $_POST['Class'];
@@ -33,7 +32,12 @@
             exit;
         }
 
-        $StudentID++;
+        $sqlQuery = "SELECT MAX(students.StudentID) FROM `students`";
+        $wynik = $db -> query($sqlQuery);
+        $StudentID = $wynik -> fetch_row();
+        $StudentID = intval($StudentID[0]); echo $StudentID[0]."<br>";
+        $StudentID++; echo $StudentID."<br>";
+
         $sqlCode = "INSERT INTO students VALUES ('".$StudentID."', '".$FirstName."', '".$LastName."', '".$Class."')<br>";
         echo $sqlCode;
 
@@ -41,7 +45,8 @@
         if($result){
             echo $db -> affected_rows." student zapisany do bazy.";
         }else{
-            echo "Błąd. Uczeń nie został zapisany do bazy.";
+            echo "Błąd. Uczeń nie został zapisany do bazy. <br>";
+            echo mysqli_error($db);
         }
         $db -> close();
     ?>
